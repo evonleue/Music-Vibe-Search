@@ -1,0 +1,7 @@
+numpy
+librosa
+tqdm
+
+# Optional: faster/more reliable decoding of some audio formats.
+# The scanner falls back gracefully if this is not installed.
+miniaudio

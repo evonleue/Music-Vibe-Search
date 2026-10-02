@@ -1,0 +1,43 @@
+# Music Vibe Search v1.0.0
+
+First public release. Pick a song and get a playlist of tracks from your own library that *sound* similar, based on analysis of the audio itself rather than genre tags or lyrics. Stop the commercial bias madness of online depositories and playlists.
+
+Everything runs locally. Your music is never uploaded or modified.
+
+## Features
+
+- **Audio fingerprinting:** analyzes energy, brightness, spectral flatness and timbre (MFCC) for each track and stores the results in a local SQLite database.
+- **Vibe search:** search by artist, folder or file name, choose a seed track, and tune the match strictness with a slider that shows a live count of matching tracks.
+- **One-click playlists:** generates an `.m3u` playlist (seed track first, up to 20 tracks chosen randomly from your pool of matching tracks) and opens it in your default media player.
+- **Self-configuring launcher:** the first run walks you through choosing your music folder and shows a scan-time estimate. After that you go straight to the main menu.
+- **Content filters:** audiobooks, sound effects, comedy and soundtrack folders are always excluded. 
+
+## Main menu
+
+1. Search music and run playlist
+2. Rescan music (adds new files only)
+3. Full rebuild (reprocesses every track)
+4. Exit
+
+## Requirements
+
+- Windows
+- Python 3 with Tkinter (developed and tested on Python 3.12)
+- `pip install -r requirements.txt`
+
+## Getting started
+
+```
+git clone https://github.com/evonleue>/Music-Vibe-Search.git
+cd Music-Vibe-Search
+pip install -r requirements.txt
+```
+
+Then double-click `Start.bat`. See the [README](README.md) for full instructions.
+
+## Known limitations
+
+- Windows only for now; app data is stored under `%LOCALAPPDATA%`.
+- Playlist auto-play needs a default application associated with `.m3u` files.
+- Supported formats: `.mp3`, `.wav`, `.flac`, `.m4a`, `.ogg`.
+- Scanning takes roughly 0.7 seconds per file, so a large library takes a while the first time.

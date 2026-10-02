@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editors / IDEs
+.vscode/
+.idea/
+
+# Local data (the app stores its real data in %LOCALAPPDATA%,
+# but keep any local test copies out of the repo)
+*.db
+*.m3u
+logs/
+config.json
+
+# OS files
+Thumbs.db
+.DS_Store
